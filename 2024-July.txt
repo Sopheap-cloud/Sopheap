@@ -1,0 +1,1934 @@
+From siva.sayavarapu at fedex.com  Mon Jul  1 15:53:03 2024
+From: siva.sayavarapu at fedex.com (Siva Krishna Sayavarapu)
+Date: Mon, 1 Jul 2024 13:53:03 +0000
+Subject: GPG error: Inappropriate ioctl for device
+In-Reply-To: <DM6PR12MB4515D63A1CABB4C97F74AFE9E7D02@DM6PR12MB4515.namprd12.prod.outlook.com>
+References: <DM6PR12MB4515D63A1CABB4C97F74AFE9E7D02@DM6PR12MB4515.namprd12.prod.outlook.com>
+Message-ID: <DM6PR12MB451507180EDBEC612B7C5B81E7D32@DM6PR12MB4515.namprd12.prod.outlook.com>
+
+Hi Team,
+
+We are using GPG version 2.2.20 and recently we have upgraded our linux server from RHEL7 to RHEL8.
+
+After the migration, we are receiving below error while encrypting files. Can you please advise how can we solve this problem?
+
+Standard Error:  gpg: signing failed: Inappropriate ioctl for device
+                                gpg: /var/fedex/fxnet/common/q1/86e/FTNCANADA.ZZ/86et00vvkl20.0: sign+encrypt failed: Inappropriate ioctl for device
+
+Thanks & Regards,
+
+Siva Krishna Sayavarapu | Sr. EDI Programmer Analyst | FedEx Logistics | mobile 901.482.6179
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240701/028b9124/attachment-0001.html>
+
+From mm at dorfdsl.de  Tue Jul  2 12:00:38 2024
+From: mm at dorfdsl.de (Marco Moock)
+Date: Tue, 2 Jul 2024 12:00:38 +0200
+Subject: gpgsm empty subject still considered invalid
+Message-ID: <20240702120038.7e18f4af@dorfdsl.de>
+
+Hello!
+
+This is related to:
+https://lists.gnupg.org/pipermail/gnupg-users/2024-June/067180.html
+
+https://dev.gnupg.org/T7171
+
+When I try to send mail via Claws Mail, I get the following error
+messages in kwatchgnupg:
+
+  4 - 2024-07-02 11:46:32 gpgsm[7782]: DBG: adding certificates at level -8
+  4 - 2024-07-02 11:46:32 gpgsm[7782]: no subject found in certificate
+  4 - 2024-07-02 11:46:32 gpgsm[7782]: failed to store list of certificates: Fehlerhaftes Zertifikat
+  4 - 2024-07-02 11:46:32 gpgsm[7782]: error creating signature: Fehlerhaftes Zertifikat <GPGSM>
+  4 - 2024-07-02 11:46:32 gpgsm[7782]: DBG: chan_35 -> ERR 50331684 Fehlerhaftes Zertifikat <GPGSM>
+  4 - 2024-07-02 11:46:32 gpgsm[7782]: DBG: chan_35 <- BYE
+  4 - 2024-07-02 11:46:32 gpgsm[7782]: DBG: chan_35 -> OK closing connection
+
+I am running libksba8:amd64 1.6.7-2
+
+Please tell me which additional information you need.
+
+-- 
+Gru?
+Marco
+
+Send unsolicited bulk mail to 1719913741muell at cartoonies.org
+
+
+From howlandalt at gmail.com  Tue Jul  2 22:57:50 2024
+From: howlandalt at gmail.com (AJ Howland)
+Date: Tue, 2 Jul 2024 15:57:50 -0500
+Subject: dev.gnupg.org Account Request
+Message-ID: <CAATLxZk-H8QO62-s4nhn8_xb_ZFe=vtvaOKZ1mqAOhUYwWE1Kw@mail.gmail.com>
+
+All,
+
+Please approve my dev.gnupg.org account request. I have a bug to report.
+
+Handle: ajh
+Shown name: Aaron Howland
+Mail address: howlandalt at gmail.com
+
+- Aaron Howland
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240702/1d15d7d2/attachment.html>
+
+From wk at gnupg.org  Fri Jul  5 17:47:11 2024
+From: wk at gnupg.org (Werner Koch)
+Date: Fri, 05 Jul 2024 17:47:11 +0200
+Subject: Quick heads up: GnuPG 2.5.0 is now available
+Message-ID: <875xtjhmdc.fsf@jacob.g10code.de>
+
+Hi!
+
+I'll write an announcement later for now see
+
+https://dev.gnupg.org/T7189
+
+for the NEWS and the usual place for downloading.  Latest released
+libaries are required.  Take care when running
+
+  gpg --quick-gen-key foo at example.org pqc
+
+The created key is EXPERIMENTAL and will cont be compliant wit the
+final FIPS2-03 and LibrePGP specification.
+
+
+Salam-Shalom,
+
+   Werner
+
+
+-- 
+The pioneers of a warless world are the youth that
+refuse military service.             - A. Einstein
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: openpgp-digital-signature.asc
+Type: application/pgp-signature
+Size: 247 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240705/51856752/attachment.sig>
+
+From sidtosh4 at gmail.com  Sat Jul  6 16:27:53 2024
+From: sidtosh4 at gmail.com (Sid T)
+Date: Sat, 6 Jul 2024 15:27:53 +0100
+Subject: [bug] gpa gtk app should have appstream metadata
+Message-ID: <CACZb5Hi+e43xWnTKWbP08gaJgWhp=nDZZi1+AXKC3NeHGFmqaw@mail.gmail.com>
+
+Tried creating an account and it failed, so the bug report goes here.
+
+Issue:
+-------
+
+Adding gpa appstream data will show the app details better in app centers
+like GNOME Software, KDE discover etc
+
+1. Defining appstream metadata should also fix the errors in
+https://appstream.debian.org/sid/main/issues/gpa.html
+
+2. Use "appstreamcli validate" command ( and not the deprecated "appstream-util
+validate" ) command to validate the appstream metainfo file.
+
+3. Once appstream metadata is added and a new release made,
+https://appstream.debian.org/sid/main/metainfo/gpa.html will contain the
+processed metadata which will be consumed by app centers
+
+Thanks!
+Sid
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240706/087c4054/attachment.html>
+
+From wk at gnupg.org  Mon Jul  8 15:50:59 2024
+From: wk at gnupg.org (Werner Koch)
+Date: Mon, 08 Jul 2024 15:50:59 +0200
+Subject: gpgsm empty subject still considered invalid
+In-Reply-To: <20240702120038.7e18f4af@dorfdsl.de> (Marco Moock's message of
+ "Tue, 2 Jul 2024 12:00:38 +0200")
+References: <20240702120038.7e18f4af@dorfdsl.de>
+Message-ID: <87v81gdmbg.fsf@jacob.g10code.de>
+
+Hi
+
+updating libksba is not enough.  You also need to update gpgsm.  Maybe
+you can try GnuPG 2.5.0 which we released on Friday.
+
+
+Salam-Shalom,
+
+   Werner
+
+-- 
+The pioneers of a warless world are the youth that
+refuse military service.             - A. Einstein
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: openpgp-digital-signature.asc
+Type: application/pgp-signature
+Size: 247 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240708/4bff2ce1/attachment.sig>
+
+From wk at gnupg.org  Mon Jul  8 12:13:42 2024
+From: wk at gnupg.org (Werner Koch)
+Date: Mon, 08 Jul 2024 12:13:42 +0200
+Subject: [Announce] GnuPG 2.5.0 released for public testing
+Message-ID: <87cynofay1.fsf@jacob.g10code.de>
+
+Hello!
+
+We are pleased to announce the availability of a new GnuPG release:
+version 2.5.0.  This release is the first of a series of public testing
+releases eventually leading to a new stable version 2.6.
+
+The main features in the 2.6 series are improvements for 64 bit Windows
+and the introduction of a PQC algorithms.
+
+The 2.6 series will not differ a lot from 2.4 because the majority of
+changes are internal to make use of newer features from the supporting
+libraries.  The risk of regressions is thus lower than it was with the
+introduction of 2.4 in 2021.
+
+
+What is GnuPG
+=============
+
+The GNU Privacy Guard (GnuPG, GPG) is a complete and free implementation
+of the OpenPGP and S/MIME standards.
+
+GnuPG allows to encrypt and sign data and communication, features a
+versatile key management system as well as access modules for public key
+directories.  GnuPG itself is a command line tool with features for easy
+integration with other applications.  The separate library GPGME provides
+a uniform API to use the GnuPG engine by software written in common
+programming languages.  A wealth of frontend applications and libraries
+making use of GnuPG are available.  As an universal crypto engine GnuPG
+provides support for S/MIME and Secure Shell in addition to OpenPGP.
+
+GnuPG is Free Software (meaning that it respects your freedom).  It can
+be freely used, modified and distributed under the terms of the GNU
+General Public License.
+
+
+Noteworthy changes in version 2.5.0 (2024-07-05)
+================================================
+         [compared to version 2.4.5]
+
+  * gpg: Support composite Kyber+ECC public key algorithms.  This is
+    experimental due to the yet outstanding FIPS-203 specification.
+    [T6815]
+
+  * gpg: Allow algo string "pqc" for --quick-gen-key.  [rG12ac129a70]
+
+  * gpg: New option --show-only-session-key.  [rG1695cf267e]
+
+  * gpg: Print designated revokers also in non-colon listing mode.
+    [rG9d618d1273]
+
+  * gpg: Make --with-sig-check work with --show-key in non-colon
+    listing mode.  [rG0c34edc443]
+
+  * tpm: Rework error handling and fix key import [T7129, T7186]
+
+  * Varous fixes to improve robustness on 64 bit Windows.  [T7139]
+
+  Changes which will also show up in the firthcoming 2.4.6:
+
+  * gpg: New command --quick-set-ownertrust.  [rG967678d972]
+
+  * gpg: Indicate disabled keys in key listings and add list option
+    "show-ownertrust".  [rG2a0a706eb2]
+
+  * gpg: Make sure a DECRYPTION_OKAY is never issued for a bad OCB
+    tag.  [T7042]
+
+  * gpg: Do not allow to accidently set the RENC usage.  [T7072]
+
+  * gpg: Accept armored files without CRC24 checksum.  [T7071]
+
+  * gpg: New --import-option "only-pubkeys".  [T7146]
+
+  * gpg: Repurpose the AKL mechanism "ldap" to work like the keyserver
+    mechnism but only for LDAP keyservers.  [rG068ebb6f1e]
+
+  * gpg: ADSKs are now configurable for new keys.  [T6882]
+
+  * gpgsm: Emit user IDs with an empty Subject also in colon mode.
+    [T7171]
+
+  * agent: Consider an empty pattern file as valid.  [rGc27534de95]
+
+  * agent: Fix error handling of READKEY.  [T6012]
+
+  * agent: Avoid random errors when storing key in ephemeral mode.
+    [T7129, rGfdc5003956]
+
+  * agent: Make "SCD DEVINFO --watch" more robust.  [T7151]
+
+  * scd: Improve KDF data object handling for OpenPGP cards.  [T7058]
+
+  * scd: Avoid buffer overrun with more than 16 PC/SC readers.
+    [T7129, rG4c1b007035]
+
+  * scd: Fix how the scdaemon on its pipe connection finishes.
+    [T7160]
+
+  * gpgconf: Check readability of some files with -X and change its
+    output format.  [rG98e287ba6d]
+
+  * gpg-mail-tube: New tool to apply PGP/MIME encryption to a mail.
+    [rG28a080bc9f]
+
+  * Fix some uninitialized variables and double frees in error code
+    paths.  [T7129]
+
+  Release-info: https://dev.gnupg.org/T7189
+
+
+Getting the Software
+====================
+
+Please follow the instructions found at <https://gnupg.org/download/> or
+read on:
+
+GnuPG may be downloaded from one of the GnuPG mirror sites or direct
+from its primary file server.  The list of mirrors can be found at
+<https://gnupg.org/download/mirrors.html>.  Note that GnuPG is not
+available at ftp.gnu.org.
+
+The GnuPG source code compressed using BZIP2 and its OpenPGP signature
+are available here:
+
+ https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.0.tar.bz2 (7946k)
+ https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.0.tar.bz2.sig
+
+An installer for Windows without any graphical frontend except for a
+very minimal Pinentry tool is available here:
+
+ https://gnupg.org/ftp/gcrypt/binary/gnupg-w32-2.5.0_20240705.exe (5297k)
+ https://gnupg.org/ftp/gcrypt/binary/gnupg-w32-2.5.0_20240705.exe.sig
+
+The source used to build this Windows installer can be found in the same
+directory with a ".tar.xz" suffix.  Note that these Windows binaries are
+exceptionally not AuthentiCode signed and not well tested.
+
+
+Checking the Integrity
+======================
+
+In order to check that the version of GnuPG which you are going to
+install is an original and unmodified one, you can do it in one of
+the following ways:
+
+ * If you already have a version of GnuPG installed, you can simply
+   verify the supplied signature.  For example to verify the signature
+   of the file gnupg-2.5.0.tar.bz2 you would use this command:
+
+     gpg --verify gnupg-2.5.0.tar.bz2.sig gnupg-2.5.0.tar.bz2
+
+   This checks whether the signature file matches the source file.
+   You should see a message indicating that the signature is good and
+   made by one or more of the release signing keys.  Make sure that
+   this is a valid key, either by matching the shown fingerprint
+   against a trustworthy list of valid release signing keys or by
+   checking that the key has been signed by trustworthy other keys.
+   See the end of this mail for information on the signing keys.
+
+ * If you are not able to use an existing version of GnuPG, you have
+   to verify the SHA-1 checksum.  On Unix systems the command to do
+   this is either "sha1sum" or "shasum".  Assuming you downloaded the
+   file gnupg-2.5.0.tar.bz2, you run the command like this:
+
+     sha1sum gnupg-2.5.0.tar.bz2
+
+   and check that the output matches the next line:
+
+eb33777782b1d5c766f449a26126ab1d9cef25ef  gnupg-2.5.0.tar.bz2
+bc4ff3b8b1b850eb18068f116d9d134583fdd92e  gnupg-w32-2.5.0_20240705.tar.xz
+35caef9965b10eed53b8d09b48fba5d1479f3512  gnupg-w32-2.5.0_20240705.exe
+
+
+Internationalization
+====================
+
+This version of GnuPG has support for 26 languages with Chinese
+(traditional and simplified), Czech, French, German, Italian,
+Japanese, Norwegian, Polish, Russian, Turkish, and Ukrainian
+being almost completely translated.
+
+
+Documentation and Support
+=========================
+
+The file gnupg.info has the complete reference manual of the system.
+Separate man pages are included as well but they miss some of the
+details available only in the manual.  The manual is also available
+online at
+
+  https://gnupg.org/documentation/manuals/gnupg/
+
+or can be downloaded as PDF at
+
+  https://gnupg.org/documentation/manuals/gnupg.pdf
+
+You may also want to search the GnuPG mailing list archives or ask on
+the gnupg-users mailing list for advise on how to solve problems.  Most
+of the new features are around for several years and thus enough public
+experience is available.  https://wiki.gnupg.org has user contributed
+information around GnuPG and relate software.
+
+In case of build problems specific to this release please first check
+https://dev.gnupg.org/T7189 for updated information.  In particular you
+may want to apply the Speedo patch mentioned there to avoid a glitch
+with building the bzip2 library.
+
+Please consult the archive of the gnupg-users mailing list before
+reporting a bug: https://gnupg.org/documentation/mailing-lists.html.
+We suggest to send bug reports for a new release to this list in favor
+of filing a bug at https://bugs.gnupg.org.  If you need commercial
+support go to https://gnupg.com or https://gnupg.org/service.html.
+
+If you are a developer and you need a certain feature for your project,
+please do not hesitate to bring it to the gnupg-devel mailing list for
+discussion.
+
+
+Thanks
+======
+
+Since 2001 maintenance and development of GnuPG is done by g10 Code GmbH
+and has mostly been financed by donations.  Several full-time employed
+developers and contractors are working exclusively on GnuPG and closely
+related software like Libgcrypt, GPGME, Kleopatra and Gpg4win.
+
+Fortunately, and this is still not common with free software, we have
+established a way of financing the development while keeping all our
+software free and freely available for everyone.  Our model is similar
+to the way RedHat manages RHEL and Fedora: Except for the actual binary
+of the MSI installer for Windows and client specific configuration
+files, all the software is available under the GNU GPL and other Open
+Source licenses.  Thus customers may even build and distribute their own
+version of the software as long as they do not use our trademarks
+GnuPG Desktop? or GnuPG VS-Desktop?.
+
+We like to thank all the nice people who are helping the GnuPG project,
+be it testing, coding, translating, suggesting, auditing, administering
+the servers, spreading the word, answering questions on the mailing
+lists, or helped with donations.
+
+*Thank you all*
+
+   Your GnuPG hackers
+
+
+p.s.
+This is an announcement only mailing list.  Please send replies only to
+the gnupg-users at gnupg.org mailing list.
+
+List of Release Signing Keys:
+To guarantee that a downloaded GnuPG version has not been tampered by
+malicious entities we provide signature files for all tarballs and
+binary versions.  The keys are also signed by the long term keys of
+their respective owners.  Current releases are signed by one or more
+of these four keys:
+
+  rsa3072 2017-03-17 [expires: 2027-03-15]
+  5B80 C575 4298 F0CB 55D8  ED6A BCEF 7E29 4B09 2E28
+  Andre Heinecke (Release Signing Key)
+
+  ed25519 2020-08-24 [expires: 2030-06-30]
+  6DAA 6E64 A76D 2840 571B  4902 5288 97B8 2640 3ADA
+  Werner Koch (dist signing 2020)
+
+  ed25519 2021-05-19 [expires: 2027-04-04]
+  AC8E 115B F73E 2D8D 47FA  9908 E98E 9B2D 19C6 C8BD
+  Niibe Yutaka (GnuPG Release Key)
+
+  brainpoolP256r1 2021-10-15 [expires: 2029-12-31]
+  02F3 8DFF 731F F97C B039  A1DA 549E 695E 905B A208
+  GnuPG.com (Release Signing Key 2021)
+
+The keys are available at https://gnupg.org/signature_key.html and
+in any recently released GnuPG tarball in the file g10/distsigkey.gpg .
+Note that this mail has been signed by a different key.
+
+-- 
+Arguing that you don't care about the right to privacy because you have
+nothing to hide is no different from saying you don't care about free
+speech because you have nothing to say.                - Edward Snowden
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: openpgp-digital-signature.asc
+Type: application/pgp-signature
+Size: 247 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240708/a0aaf7ed/attachment-0001.sig>
+-------------- next part --------------
+_______________________________________________
+Gnupg-announce mailing list
+Gnupg-announce at gnupg.org
+http://lists.gnupg.org/mailman/listinfo/gnupg-announce
+
+From siva.sayavarapu at fedex.com  Tue Jul  9 15:48:24 2024
+From: siva.sayavarapu at fedex.com (Siva Krishna Sayavarapu)
+Date: Tue, 9 Jul 2024 13:48:24 +0000
+Subject: GPG error: Inappropriate ioctl for device
+In-Reply-To: <DM6PR12MB451507180EDBEC612B7C5B81E7D32@DM6PR12MB4515.namprd12.prod.outlook.com>
+References: <DM6PR12MB4515D63A1CABB4C97F74AFE9E7D02@DM6PR12MB4515.namprd12.prod.outlook.com>
+ <DM6PR12MB451507180EDBEC612B7C5B81E7D32@DM6PR12MB4515.namprd12.prod.outlook.com>
+Message-ID: <DM6PR12MB45151275668322AAB0EE8B93E7DB2@DM6PR12MB4515.namprd12.prod.outlook.com>
+
+Hi Team,
+
+Can you please advise on this issue?
+
+Standard Error: gpg: forcing symmetric cipher CAST5 (3) violates recipient preferences
+gpg: WARNING: encrypting more than 150 MiB with algorithm CAST5 should be avoided
+gpg: signing failed: Inappropriate ioctl for device
+gpg: /var/fedex/fxnet/common/q1/86d/FTNIMAGE.ZZ/86dt0023nbie.0: sign+encrypt failed: Inappropriate ioctl for device
+
+We are using below Encrypt string:
+
+--passphrase-fd 0 --no-tty --batch --sign --encrypt --compress-algo 1 --cipher-algo cast5
+
+
+
+Thanks & Regards,
+
+Siva Krishna Sayavarapu | Sr. EDI Programmer Analyst | FedEx Logistics | mobile 901.482.6179
+
+From: Siva Krishna Sayavarapu
+Sent: Monday, July 1, 2024 8:53 AM
+To: 'gnupg-users at gnupg.org' <gnupg-users at gnupg.org>
+Subject: RE: GPG error: Inappropriate ioctl for device
+
+Hi Team,
+
+We are using GPG version 2.2.20 and recently we have upgraded our linux server from RHEL7 to RHEL8.
+
+After the migration, we are receiving below error while encrypting files. Can you please advise how can we solve this problem?
+
+Standard Error:  gpg: signing failed: Inappropriate ioctl for device
+                                gpg: /var/fedex/fxnet/common/q1/86e/FTNCANADA.ZZ/86et00vvkl20.0: sign+encrypt failed: Inappropriate ioctl for device
+
+Thanks & Regards,
+
+Siva Krishna Sayavarapu | Sr. EDI Programmer Analyst | FedEx Logistics | mobile 901.482.6179
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240709/c0803b37/attachment.html>
+
+From oub at mat.ucm.es  Wed Jul 17 10:41:18 2024
+From: oub at mat.ucm.es (Uwe Brauer)
+Date: Wed, 17 Jul 2024 10:41:18 +0200
+Subject: gpgsm 2.4.4 cannot import my p12 certificate (but I could in earlier
+ versions)
+Message-ID: <87bk2wif69.fsf@mat.ucm.es>
+
+
+Hi
+
+
+I upgraded yesterday from Ubuntu 16 to 24 and have now gpgsm 2.4.4 installed.
+
+
+I imported an official p12 certificate without any probblems into firefox and google chrome
+
+However when I run 
+
+,----
+| gpgsm --import Brauer.p12
+`----
+
+Type the password, I recive 
+
+--8<---------------cut here---------------start------------->8---
+gpgsm: parse_bag_data(data.outerseqs): lvl=10 (_tlv_parser_next): Success - General error
+gpgsm: p12_parse(bag.data): @0053 lvl=10 _tlv_parser_next: Success - General error
+gpgsm: error parsing or decrypting the PKCS#12 file
+gpgsm: total number processed: 0
+--8<---------------cut here---------------end--------------->8---
+
+What can I do? 
+
+This is an important certificate for me.
+
+-- 
+I strongly condemn Hamas heinous despicable pogroms/atrocities on Israel
+I strongly condemn Putin's war of aggression against Ukraine.
+I support to deliver weapons to Ukraine's military. 
+I support the EU and NATO membership of Ukraine. 
+
+
+
+
+From oub at mat.ucm.es  Wed Jul 17 14:48:25 2024
+From: oub at mat.ucm.es (Uwe Brauer)
+Date: Wed, 17 Jul 2024 14:48:25 +0200
+Subject: gpgsm 2.4.4 cannot import my p12 certificate (but I could in
+ earlier versions)
+References: <87bk2wif69.fsf@mat.ucm.es>
+ <20240717142110.7641ee7c@jackson.g10code.de>
+Message-ID: <87zfqggp5y.fsf@mat.ucm.es>
+
+>>> "EB" == Eva Bolten <eva.bolten at gnupg.com> writes:
+
+Hi
+
+
+> Hi,
+> try the following: 
+
+> Export the certificate from firefox or chrome into a new file and try
+> to import the certificate from that file with gpgsm.
+
+Thanks.
+
+Meanwhile I found out the culprit might have been a somehow outdated
+(and maybe corrupted pubring file.
+
+I deleted it, and re-copied the file from my external disk. Then
+everything worked as expected.
+
+Regards
+
+Uwe 
+
+
+
+
+-- 
+I strongly condemn Hamas heinous despicable pogroms/atrocities on Israel
+I strongly condemn Putin's war of aggression against Ukraine.
+I support to deliver weapons to Ukraine's military. 
+I support the EU and NATO membership of Ukraine. 
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/pkcs7-signature
+Size: 5684 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240717/e893003d/attachment-0001.bin>
+
+From siva.sayavarapu at fedex.com  Thu Jul 18 15:41:12 2024
+From: siva.sayavarapu at fedex.com (Siva Krishna Sayavarapu)
+Date: Thu, 18 Jul 2024 13:41:12 +0000
+Subject: GPG error: Inappropriate ioctl for device
+In-Reply-To: <DM6PR12MB45151275668322AAB0EE8B93E7DB2@DM6PR12MB4515.namprd12.prod.outlook.com>
+References: <DM6PR12MB4515D63A1CABB4C97F74AFE9E7D02@DM6PR12MB4515.namprd12.prod.outlook.com>
+ <DM6PR12MB451507180EDBEC612B7C5B81E7D32@DM6PR12MB4515.namprd12.prod.outlook.com>
+ <DM6PR12MB45151275668322AAB0EE8B93E7DB2@DM6PR12MB4515.namprd12.prod.outlook.com>
+Message-ID: <DM6PR12MB45157DF9F8566C38B4EFB2E4E7AC2@DM6PR12MB4515.namprd12.prod.outlook.com>
+
+Hi Team,
+
+Can you please look into the below issue and advise as I'm unable to fix this with the solution that I found?
+
+Thanks & Regards,
+
+Siva Krishna Sayavarapu | Sr. EDI Programmer Analyst | FedEx Logistics | mobile 901.482.6179
+
+From: Gnupg-users <gnupg-users-bounces at gnupg.org> On Behalf Of Siva Krishna Sayavarapu via Gnupg-users
+Sent: Tuesday, July 9, 2024 8:48 AM
+To: gnupg-users at gnupg.org
+Subject: [EXTERNAL] RE: GPG error: Inappropriate ioctl for device
+
+Caution! This email originated outside of FedEx. Please do not open attachments or click links from an unknown or suspicious origin.
+
+Hi Team,
+
+Can you please advise on this issue?
+
+Standard Error: gpg: forcing symmetric cipher CAST5 (3) violates recipient preferences
+gpg: WARNING: encrypting more than 150 MiB with algorithm CAST5 should be avoided
+gpg: signing failed: Inappropriate ioctl for device
+gpg: /var/fedex/fxnet/common/q1/86d/FTNIMAGE.ZZ/86dt0023nbie.0: sign+encrypt failed: Inappropriate ioctl for device
+
+We are using below Encrypt string:
+
+--passphrase-fd 0 --no-tty --batch --sign --encrypt --compress-algo 1 --cipher-algo cast5
+
+
+
+Thanks & Regards,
+
+Siva Krishna Sayavarapu | Sr. EDI Programmer Analyst | FedEx Logistics | mobile 901.482.6179
+
+From: Siva Krishna Sayavarapu
+Sent: Monday, July 1, 2024 8:53 AM
+To: 'gnupg-users at gnupg.org' <gnupg-users at gnupg.org<mailto:gnupg-users at gnupg.org>>
+Subject: RE: GPG error: Inappropriate ioctl for device
+
+Hi Team,
+
+We are using GPG version 2.2.20 and recently we have upgraded our linux server from RHEL7 to RHEL8.
+
+After the migration, we are receiving below error while encrypting files. Can you please advise how can we solve this problem?
+
+Standard Error:  gpg: signing failed: Inappropriate ioctl for device
+                                gpg: /var/fedex/fxnet/common/q1/86e/FTNCANADA.ZZ/86et00vvkl20.0: sign+encrypt failed: Inappropriate ioctl for device
+
+Thanks & Regards,
+
+Siva Krishna Sayavarapu | Sr. EDI Programmer Analyst | FedEx Logistics | mobile 901.482.6179
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240718/494037cc/attachment.html>
+
+From gniibe at fsij.org  Fri Jul 19 02:04:00 2024
+From: gniibe at fsij.org (NIIBE Yutaka)
+Date: Fri, 19 Jul 2024 09:04:00 +0900
+Subject: GPG error: Inappropriate ioctl for device
+In-Reply-To: <DM6PR12MB45157DF9F8566C38B4EFB2E4E7AC2@DM6PR12MB4515.namprd12.prod.outlook.com>
+References: <DM6PR12MB4515D63A1CABB4C97F74AFE9E7D02@DM6PR12MB4515.namprd12.prod.outlook.com>
+ <DM6PR12MB451507180EDBEC612B7C5B81E7D32@DM6PR12MB4515.namprd12.prod.outlook.com>
+ <DM6PR12MB45151275668322AAB0EE8B93E7DB2@DM6PR12MB4515.namprd12.prod.outlook.com>
+ <DM6PR12MB45157DF9F8566C38B4EFB2E4E7AC2@DM6PR12MB4515.namprd12.prod.outlook.com>
+Message-ID: <87ikx2s0wf.fsf@akagi.fsij.org>
+
+Hello,
+
+Siva Krishna Sayavarapu wrote:
+> gpg: signing failed: Inappropriate ioctl for device
+
+I think that this is due to pinentry program (it complains that there's
+no suitable device, tty, to ask passphrase).
+
+Well, older GnuPG was more friendly in those situations where a
+programmer wants to feed passphrase input by other method.
+
+> --passphrase-fd 0 --no-tty --batch --sign --encrypt --compress-algo 1 --cipher-algo cast5
+
+IIUC about your intention by using --passphrase-fd, what you need here
+is an option --pinentry-mode=loopback (not to use an external pinentry
+program).
+
+Hope this helps,
+-- 
+
+
+From dc at genunix.com  Sat Jul 20 06:38:09 2024
+From: dc at genunix.com (Dennis Clarke)
+Date: Sat, 20 Jul 2024 00:38:09 -0400
+Subject: baffled at "Chapter 1. Getting Started" due to gpg: agent_genkey
+ failed: No pinentry
+Message-ID: <c3a6d7d7-19a1-408b-b974-e8ef1e59e066@genunix.com>
+
+
+Looking at https://www.gnupg.org/gph/en/manual/c14.html one would get
+the idea that GPG would "just work" given that pinentry is right there
+in my PATH :
+
+
+oberon$ which pinentry
+/usr/local/bin/pinentry
+oberon$
+oberon$ ldd /usr/local/bin/pinentry
+         linux-vdso.so.1 (0x00007fff605ed000)
+         libassuan.so.9 => /usr/local/lib/libassuan.so.9 
+(0x00007f100e315000)
+         libgpg-error.so.0 => /usr/local/lib/libgpg-error.so.0 
+(0x00007f100e2df000)
+         libncursesw.so.6 => /lib/x86_64-linux-gnu/libncursesw.so.6 
+(0x00007f100e28d000)
+         libtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 
+(0x00007f100e25a000)
+         libiconv.so.2 => /usr/local/lib/libiconv.so.2 (0x00007f100e160000)
+         libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f100df7d000)
+         /lib64/ld-linux-x86-64.so.2 (0x00007f100e34e000)
+oberon$ /usr/local/bin/pinentry --version
+pinentry-curses (pinentry) 1.3.1
+Copyright (C) 2016 g10 Code GmbH
+License GPLv2+: GNU GPL version 2 or later <https://www.gnu.org/licenses/>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+oberon$
+oberon$ PINENTRY_PATH=/usr/local/bin
+oberon$ export PINENTRY_PATH
+oberon$
+oberon$ gpg --full-generate-key
+gpg (GnuPG) 2.4.5; Copyright (C) 2024 g10 Code GmbH
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+    (1) RSA and RSA
+    (2) DSA and Elgamal
+    (3) DSA (sign only)
+    (4) RSA (sign only)
+    (9) ECC (sign and encrypt) *default*
+   (10) ECC (sign only)
+   (14) Existing key from card
+Your selection? 9
+Please select which elliptic curve you want:
+    (1) Curve 25519 *default*
+    (4) NIST P-384
+    (6) Brainpool P-256
+Your selection? 1
+Please specify how long the key should be valid.
+          0 = key does not expire
+       <n>  = key expires in n days
+       <n>w = key expires in n weeks
+       <n>m = key expires in n months
+       <n>y = key expires in n years
+Key is valid for? (0) 0
+Key does not expire at all
+Is this correct? (y/N) y
+
+.
+. etc etc
+.
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: agent_genkey failed: No pinentry
+Key generation failed: No pinentry
+oberon$
+
+This makes no sense at all give that pinentry exists just fine.
+
+What is this "agent_genkey" thing? There is no mention of that on the
+"Getting Started" page at all.
+
+
+
+-- 
+Dennis Clarke
+RISC-V/SPARC/PPC/ARM/CISC
+UNIX and Linux spoken
+
+
+From ametzler at bebt.de  Sat Jul 20 09:10:52 2024
+From: ametzler at bebt.de (Andreas Metzler)
+Date: Sat, 20 Jul 2024 09:10:52 +0200
+Subject: baffled at "Chapter 1. Getting Started" due to gpg: agent_genkey
+ failed: No pinentry
+In-Reply-To: <c3a6d7d7-19a1-408b-b974-e8ef1e59e066@genunix.com>
+References: <c3a6d7d7-19a1-408b-b974-e8ef1e59e066@genunix.com>
+Message-ID: <Zpti_FHVFIIvowwa@argenau.bebt.de>
+
+On 2024-07-20 Dennis Clarke via Gnupg-users <gnupg-users at gnupg.org> wrote:
+> Looking at https://www.gnupg.org/gph/en/manual/c14.html one would get
+> the idea that GPG would "just work" given that pinentry is right there
+
+> oberon$ which pinentry
+> /usr/local/bin/pinentry
+[...]
+
+Hello,
+
+afaik gnupg does not search for the helpers on PATH, their location is
+built into the binary, running gpgconf should show where it is looking.
+
+cu Andreas
+
+
+From ralph at ml.seichter.de  Sat Jul 20 10:30:58 2024
+From: ralph at ml.seichter.de (Ralph Seichter)
+Date: Sat, 20 Jul 2024 10:30:58 +0200
+Subject: baffled at "Chapter 1. Getting Started" due to gpg:
+ agent_genkey failed: No pinentry
+In-Reply-To: <c3a6d7d7-19a1-408b-b974-e8ef1e59e066@genunix.com>
+References: <c3a6d7d7-19a1-408b-b974-e8ef1e59e066@genunix.com>
+Message-ID: <87bk2sea7x.fsf@ra.horus-it.com>
+
+* Dennis Clarke via Gnupg-users:
+
+> Looking at https://www.gnupg.org/gph/en/manual/c14.html one would get
+> the idea that GPG would "just work" given that pinentry is right there
+> in my PATH [...]
+
+How would one get that idea? The manual page you linked contains neither
+the string "pinentry" nor "PATH".
+
+-Ralph
+
+
+From dc at genunix.com  Sat Jul 20 11:55:36 2024
+From: dc at genunix.com (Dennis Clarke)
+Date: Sat, 20 Jul 2024 05:55:36 -0400
+Subject: baffled at "Chapter 1. Getting Started" due to gpg: agent_genkey
+ failed: No pinentry
+In-Reply-To: <87bk2sea7x.fsf@ra.horus-it.com>
+References: <c3a6d7d7-19a1-408b-b974-e8ef1e59e066@genunix.com>
+ <87bk2sea7x.fsf@ra.horus-it.com>
+Message-ID: <967c73c7-1fa8-417e-8878-c566e5d211d3@genunix.com>
+
+On 7/20/24 04:30, Ralph Seichter via Gnupg-users wrote:
+> * Dennis Clarke via Gnupg-users:
+> 
+>> Looking at https://www.gnupg.org/gph/en/manual/c14.html one would get
+>> the idea that GPG would "just work" given that pinentry is right there
+>> in my PATH [...]
+> 
+> How would one get that idea? The manual page you linked contains neither
+> the string "pinentry" nor "PATH".
+> 
+
+I have no idea what you are talking about. That is not a manpage.
+
+
+-- 
+Dennis Clarke
+RISC-V/SPARC/PPC/ARM/CISC
+UNIX and Linux spoken
+
+
+
+From dc at genunix.com  Sat Jul 20 12:08:50 2024
+From: dc at genunix.com (Dennis Clarke)
+Date: Sat, 20 Jul 2024 06:08:50 -0400
+Subject: baffled at "Chapter 1. Getting Started" due to gpg: agent_genkey
+ failed: No pinentry
+In-Reply-To: <Zpti_FHVFIIvowwa@argenau.bebt.de>
+References: <c3a6d7d7-19a1-408b-b974-e8ef1e59e066@genunix.com>
+ <Zpti_FHVFIIvowwa@argenau.bebt.de>
+Message-ID: <5847eea7-1909-4fa3-8de6-42fef09754e4@genunix.com>
+
+On 7/20/24 03:10, Andreas Metzler wrote:
+> On 2024-07-20 Dennis Clarke via Gnupg-users <gnupg-users at gnupg.org> wrote:
+>> Looking at https://www.gnupg.org/gph/en/manual/c14.html one would get
+>> the idea that GPG would "just work" given that pinentry is right there
+> 
+>> oberon$ which pinentry
+>> /usr/local/bin/pinentry
+> [...]
+> 
+> Hello,
+> 
+> afaik gnupg does not search for the helpers on PATH, their location is
+> built into the binary, running gpgconf should show where it is looking.
+> 
+
+Thank you .. that seems to reveal a few things.
+
+This "--list-dirs" seems to be correct :
+
+oberon$ gpgconf --list-dirs
+sysconfdir:/usr/local/etc/gnupg
+bindir:/usr/local/bin
+libexecdir:/usr/local/libexec
+libdir:/usr/local/lib/gnupg
+datadir:/usr/local/share/gnupg
+localedir:/usr/local/share/locale
+socketdir:/run/user/16411/gnupg
+dirmngr-socket:/run/user/16411/gnupg/S.dirmngr
+keyboxd-socket:/run/user/16411/gnupg/S.keyboxd
+agent-ssh-socket:/run/user/16411/gnupg/S.gpg-agent.ssh
+agent-extra-socket:/run/user/16411/gnupg/S.gpg-agent.extra
+agent-browser-socket:/run/user/16411/gnupg/S.gpg-agent.browser
+agent-socket:/run/user/16411/gnupg/S.gpg-agent
+homedir:/home/dclarke/.gnupg
+oberon$
+
+
+However this seems to be very confused about where pinentry is :
+
+oberon$ gpgconf --list-components
+gpg:OpenPGP:/usr/local/bin/gpg
+gpgsm:S/MIME:/usr/local/bin/gpgsm
+keyboxd:Public Keys:/usr/local/libexec/keyboxd
+gpg-agent:Private Keys:/usr/local/bin/gpg-agent
+scdaemon:Smartcards:/usr/local/libexec/scdaemon
+dirmngr:Network:/usr/local/bin/dirmngr
+pinentry:Passphrase Entry:/usr/local
+
+The last line there seems to be missing "/bin/pinentry".
+
+Yep .. that is borked :
+
+oberon$ gpgconf --check-programs
+gpgconf: error running '/usr/local': probably not installed
+gpg:OpenPGP:/usr/local/bin/gpg:1:1:
+gpgsm:S/MIME:/usr/local/bin/gpgsm:1:1:
+keyboxd:Public Keys:/usr/local/libexec/keyboxd:1:1:
+gpg-agent:Private Keys:/usr/local/bin/gpg-agent:1:1:
+scdaemon:Smartcards:/usr/local/libexec/scdaemon:1:1:
+dirmngr:Network:/usr/local/bin/dirmngr:1:1:
+pinentry:Passphrase Entry:/usr/local:0:0:
+oberon$
+
+Even more curious is the missing config file :
+
+oberon$
+oberon$ gpgconf --list-config
+gpgconf: can't open global config file 
+'/usr/local/etc/gnupg/gpgconf.conf': No such file or directory
+oberon$
+
+So I guess I need to read a pile of manpages and figure out how
+to create a config file that tells gpg where things are. This is
+bizarre behavior on a UNIX/Linux system where I guess the PATH
+just does not matter much. Then again .... I don't know.
+
+
+-- 
+Dennis Clarke
+RISC-V/SPARC/PPC/ARM/CISC
+UNIX and Linux spoken
+
+
+
+From dc at genunix.com  Sat Jul 20 12:54:37 2024
+From: dc at genunix.com (Dennis Clarke)
+Date: Sat, 20 Jul 2024 06:54:37 -0400
+Subject: File /usr/local/bin/gpgconf.ctl missing and mostly undocumented
+Message-ID: <07c42b03-b7e8-4777-a855-552e7c85ec25@genunix.com>
+
+
+The struggle continues to get gnupg to "just work". By running a trace 
+on the command "gpgconf --check-programs" I see this :
+
+
+access("/usr/local/bin/gpgconf.ctl", F_OK) = -1 ENOENT (No such file or 
+directory)
+
+In the sources I see the file doc/gnupg.info-2 which has a section
+10.4.9 talking about "Files used by gpgconf". There is no such file
+and no example of what it would even look like.  I did find that file
+mentioned in the sources common/homedir.c and no other C source.
+
+The first mention of this new file is :
+
+
+2021-09-17  Werner Koch  <wk at gnupg.org>
+
+         common: Support a gpgconf.ctl file under Unix.
+         + commit d4768bb982adb5c8410303334ee8d82ba0d71f3b
+         * common/homedir.c (unix_rootdir): New.
+         (gnupg_bindir): Use it.
+         (gnupg_libexecdir): Use it.
+         (gnupg_libdir): Use it.
+         (gnupg_datadir): Use it.
+         (gnupg_localedir): Use it.
+
+         common: New function substitute_envvars.
+         + commit 9c272dc245456d5403e3bd50553b4fdccb370e27
+         * common/stringhelp.c (substitute_envvars): New.  Based on code in
+         gpg-connect-agent.
+         * common/t-stringhelp.c: Include sysutils.h.
+         (test_substitute_envvars): New.
+
+With various things being done all the way up until December last year :
+
+2023-12-22  Werner Koch  <wk at gnupg.org>
+
+         common: Add keyword socketdir to gpgconf.ctl.
+         + commit 239c1fdc28dcd0dc7aa5341be7c966da2231642a
+         * common/homedir.c (enum wantdir_values): New enums.
+         (unix_rootdir): Change arg to use the enums.  Adjust all 
+callers.  Add
+         support for the socketdir keyword.
+         (_gnupg_socketdir_internal): Take care of the socketdir keyword in
+         gpgconf.ctl.
+
+         * doc/tools.texi (Files used by gpgconf): Briefly explain the
+         gpgconf.ctl syntax.
+
+
+So it looks to be a pretty important file to have.
+
+Except there is little or no documentation about it other than the sources.
+
+So then ... can this file be hacked into place somehow or was it
+supposed to have been installed by default at "make install" or some
+other deep magic?
+
+
+-- 
+Dennis Clarke
+RISC-V/SPARC/PPC/ARM/CISC
+UNIX and Linux spoken
+
+
+From ralph at ml.seichter.de  Sat Jul 20 13:01:13 2024
+From: ralph at ml.seichter.de (Ralph Seichter)
+Date: Sat, 20 Jul 2024 13:01:13 +0200
+Subject: baffled at "Chapter 1. Getting Started" due to gpg:
+ agent_genkey failed: No pinentry
+In-Reply-To: <967c73c7-1fa8-417e-8878-c566e5d211d3@genunix.com>
+References: <c3a6d7d7-19a1-408b-b974-e8ef1e59e066@genunix.com>
+ <87bk2sea7x.fsf@ra.horus-it.com>
+ <967c73c7-1fa8-417e-8878-c566e5d211d3@genunix.com>
+Message-ID: <87y15wwcna.fsf@ra.horus-it.com>
+
+* Dennis Clarke via Gnupg-users:
+
+> I have no idea what you are talking about. That is not a manpage.
+
+I can see that you have no idea. Look closely at the URL you posted [1],
+and you will notice the infix "/manual/".
+
+  [1] https://www.gnupg.org/gph/en/manual/c14.html
+
+What I wrote in my last message stands.
+
+-Ralph
+
+
+From felix.klee at inka.de  Sat Jul 20 12:10:33 2024
+From: felix.klee at inka.de (Felix E. Klee)
+Date: Sat, 20 Jul 2024 18:10:33 +0800
+Subject: ACS APG8201-B2
+Message-ID: <CA+m_8J0FS=pgZqBwN27eOKDp6TNJ297r+xe-pT3Z=Bp7VuoO3w@mail.gmail.com>
+
+I got a nice little portable card reader with pinpad, the ACS
+[APG8201-B2][1].
+
+`gpg --card-status` works fine with my OpenPGP card. The problem is that
+when I try to decrypt a file, then GnuPG asks for the PIN using
+`/usr/bin/pinentry-gtk-2`.
+
+*How do I make GnuPG ask for the PIN via the pinpad?*
+
+With my [modded SCM SPR332 v2][2] card reader, I don?t have that
+problem.
+
+[1]: https://www.acs.com.hk/en/products/456/apg8201-b2-smart-card-reader-with-pinpad/
+[2]: https://github.com/feklee/0.332
+
+
+From dkg at fifthhorseman.net  Sun Jul 21 18:51:12 2024
+From: dkg at fifthhorseman.net (Daniel Kahn Gillmor)
+Date: Sun, 21 Jul 2024 09:51:12 -0700
+Subject: sopv-gpgpv: an implementation of the verification-only subset of
+ the Stateless OpenPGP CLI using gpgv as a backend
+Message-ID: <878qxug03j.fsf@fifthhorseman.net>
+
+Hey GnuPG folks--
+
+I've written `sopv-gpgv`, which implements the verification-only subset
+of the Stateless OpenPGP CLI, using gpgv as a backend.
+
+If you're an implementer who needs a minimalist, verification-only
+OpenPGP command-line tool, and you'd prefer to use a stable, normalized
+interface while using the well-known g10 codebase, I hope you'll
+consider this tool.
+
+Here's the reference to the Stateless OpenPGP CLI, which defines the
+`sopv` subset:
+
+   https://datatracker.ietf.org/doc/draft-dkg-openpgp-stateless-cli/
+
+Here's `sopv-gpgv`:
+
+   https://gitlab.com/dkg/sopv-gpgv
+
+The implementation is in python and has no dependencies outside the
+stdlib.
+
+The most relevant/subtle parts of it are probably the certificate
+parsing (`sopv` accepts both armored and unarmored certificates, while
+`gpgv` only accepts unarmored keyrings) and the parsing of `gpgv`'s
+status output (in the function `status_to_verifs`).
+
+I welcome review and critiques!  Please don't hesitate to report bugs or
+improvements.
+
+All the best,
+
+    --dkg
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 324 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240721/e5581207/attachment.sig>
+
+From felix.klee at inka.de  Mon Jul 22 04:45:02 2024
+From: felix.klee at inka.de (Felix E. Klee)
+Date: Mon, 22 Jul 2024 10:45:02 +0800
+Subject: ACS APG8201-B2
+In-Reply-To: <CA+m_8J0FS=pgZqBwN27eOKDp6TNJ297r+xe-pT3Z=Bp7VuoO3w@mail.gmail.com>
+References: <CA+m_8J0FS=pgZqBwN27eOKDp6TNJ297r+xe-pT3Z=Bp7VuoO3w@mail.gmail.com>
+Message-ID: <CA+m_8J2JS9VfjH6EsHQEr1+UzwMqdRPVRBrBqCRfskzLYVXQUw@mail.gmail.com>
+
+Is there anything I can try, or is the pinpad on the ACS APG8201-B2
+simply not supported?
+
+
+From siva.sayavarapu at fedex.com  Mon Jul 22 16:17:51 2024
+From: siva.sayavarapu at fedex.com (Siva Krishna Sayavarapu)
+Date: Mon, 22 Jul 2024 14:17:51 +0000
+Subject: [EXTERNAL] RE: GPG error: Inappropriate ioctl for device
+In-Reply-To: <87ikx2s0wf.fsf@akagi.fsij.org>
+References: <DM6PR12MB4515D63A1CABB4C97F74AFE9E7D02@DM6PR12MB4515.namprd12.prod.outlook.com>
+ <DM6PR12MB451507180EDBEC612B7C5B81E7D32@DM6PR12MB4515.namprd12.prod.outlook.com>
+ <DM6PR12MB45151275668322AAB0EE8B93E7DB2@DM6PR12MB4515.namprd12.prod.outlook.com>
+ <DM6PR12MB45157DF9F8566C38B4EFB2E4E7AC2@DM6PR12MB4515.namprd12.prod.outlook.com>
+ <87ikx2s0wf.fsf@akagi.fsij.org>
+Message-ID: <DM6PR12MB4515D192DA33C79C444870FCE7A82@DM6PR12MB4515.namprd12.prod.outlook.com>
+
+Thank you! The below solution worked.
+
+Thanks & Regards,
+
+Siva Krishna Sayavarapu | Sr. EDI Programmer Analyst | FedEx Logistics 
+
+-----Original Message-----
+From: NIIBE Yutaka <gniibe at fsij.org> 
+Sent: Thursday, July 18, 2024 7:04 PM
+To: Siva Krishna Sayavarapu <siva.sayavarapu at fedex.com>
+Cc: gnupg-users at gnupg.org
+Subject: [EXTERNAL] RE: GPG error: Inappropriate ioctl for device
+
+Caution! This email originated outside of FedEx. Please do not open attachments or click links from an unknown or suspicious origin.
+
+Hello,
+
+Siva Krishna Sayavarapu wrote:
+> gpg: signing failed: Inappropriate ioctl for device
+
+I think that this is due to pinentry program (it complains that there's no suitable device, tty, to ask passphrase).
+
+Well, older GnuPG was more friendly in those situations where a programmer wants to feed passphrase input by other method.
+
+> --passphrase-fd 0 --no-tty --batch --sign --encrypt --compress-algo 1 
+> --cipher-algo cast5
+
+IIUC about your intention by using --passphrase-fd, what you need here is an option --pinentry-mode=loopback (not to use an external pinentry program).
+
+Hope this helps,
+-- 
+
+
+From wk at gnupg.org  Tue Jul 23 12:11:49 2024
+From: wk at gnupg.org (Werner Koch)
+Date: Tue, 23 Jul 2024 12:11:49 +0200
+Subject: File /usr/local/bin/gpgconf.ctl missing and mostly undocumented
+In-Reply-To: <07c42b03-b7e8-4777-a855-552e7c85ec25@genunix.com> (Dennis Clarke
+ via Gnupg-users's message of "Sat, 20 Jul 2024 06:54:37 -0400")
+References: <07c42b03-b7e8-4777-a855-552e7c85ec25@genunix.com>
+Message-ID: <875xswju3e.fsf@jacob.g10code.de>
+
+Hi!
+
+On Sat, 20 Jul 2024 06:54, Dennis Clarke said:
+> The struggle continues to get gnupg to "just work". By running a trace
+> on the command "gpgconf --check-programs" I see this :
+>
+>
+> access("/usr/local/bin/gpgconf.ctl", F_OK) = -1 ENOENT (No such file
+> or directory)
+
+That checks whether this _optional_ file exists.
+
+
+From the man page:
+
+  gpgconf.ctl
+         Under Unix ?gpgconf.ctl? may be used to change some of the
+         compiled in directories where the GnuPG components are expected.  This
+         file is expected in the same directory as ?gpgconf?.  The
+         physical installation directories are evaluated and no symlinks.
+         Blank lines and lines starting with pound sign are ignored in the
+         file.  The keywords must be followed by optional white space, an equal
+         sign, optional white space, and the value.  Environment variables are
+         substituted in standard shell manner, the final value must start with
+         a slash, trailing slashes are stripped.  Valid keywords are
+         rootdir, sysconfdir, socketdir, and
+         .enable.  No errors are printed for unknown keywords.  The
+         .enable keyword is special: if the keyword is used and its
+         value evaluates to true the entire file is ignored.
+
+         Under Windows this file is used to install GnuPG as a portable
+         application.  An empty file named ?gpgconf.ctl? is expected in
+         the same directory as the tool ?gpgconf.exe? or the file must
+         have a keyword portable with the value true.  The root of the
+         installation is then that directory; or, if ?gpgconf.exe? has
+         been installed directly below a directory named ?bin?, its parent
+         directory.  You also need to make sure that the following directories
+         exist and are writable: ?ROOT/home? for the GnuPG home and
+         ?ROOT/usr/local/var/cache/gnupg? for internal cache files.
+
+         On both platforms the keyword gnupg can be used to change the
+         standard home directory.  For example a value of "gnupg-vsd" will
+         change the default home directory on unix from ?~/.gnupg? to
+         ?~/.gnupg-vsd?.  The socket directory is changed accordingly
+         unless the socketdir keyword has been used.  On Windows the
+         Registry keys are modified as well.
+
+
+
+Salam-Shalom,
+
+   Werner
+
+
+-- 
+The pioneers of a warless world are the youth that
+refuse military service.             - A. Einstein
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: openpgp-digital-signature.asc
+Type: application/pgp-signature
+Size: 247 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240723/737bcd49/attachment.sig>
+
+From wk at gnupg.org  Tue Jul 23 14:36:41 2024
+From: wk at gnupg.org (Werner Koch)
+Date: Tue, 23 Jul 2024 14:36:41 +0200
+Subject: sopv-gpgpv: an implementation of the verification-only subset
+ of the Stateless OpenPGP CLI using gpgv as a backend
+In-Reply-To: <878qxug03j.fsf@fifthhorseman.net> (Daniel Kahn Gillmor via
+ Gnupg-users's message of "Sun, 21 Jul 2024 09:51:12 -0700")
+References: <878qxug03j.fsf@fifthhorseman.net>
+Message-ID: <87h6cgi8ti.fsf@jacob.g10code.de>
+
+Hi!
+
+while talking about gpgv, let me remind you about the new
+--assert-signer option which can be used as a replacement for gpgv.
+
+  --assert-signer fpr_or_file
+  
+     This option checks whether at least one valid signature on file has
+     been made with the specified key.  The key is either specified as a
+     fingerprint or a file listing fingerprints.  The fingerprint must be
+     given or listed in compact format (no colons or spaces in between).
+     This option can be given multiple times and each fingerprint is
+     checked against the signing key as well as the corresponding
+     primary key.  If fpr_or_file specifies a file, empty lines are
+     ignored as well as all lines starting with a hash sign.  With this
+     option gpg is guaranteed to return with an exit code of 0 if and
+     only if a signature has been encountered, is valid, and the key
+     matches one of the fingerprints given by this option.
+
+This option is available since 2.4.1.
+
+
+Salam-Shalom,
+
+   Werner
+
+-- 
+The pioneers of a warless world are the youth that
+refuse military service.             - A. Einstein
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: openpgp-digital-signature.asc
+Type: application/pgp-signature
+Size: 247 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240723/75402228/attachment.sig>
+
+From wk at gnupg.org  Tue Jul 23 14:38:36 2024
+From: wk at gnupg.org (Werner Koch)
+Date: Tue, 23 Jul 2024 14:38:36 +0200
+Subject: ACS APG8201-B2
+In-Reply-To: <CA+m_8J2JS9VfjH6EsHQEr1+UzwMqdRPVRBrBqCRfskzLYVXQUw@mail.gmail.com>
+ (Felix E. Klee's message of "Mon, 22 Jul 2024 10:45:02 +0800")
+References: <CA+m_8J0FS=pgZqBwN27eOKDp6TNJ297r+xe-pT3Z=Bp7VuoO3w@mail.gmail.com>
+ <CA+m_8J2JS9VfjH6EsHQEr1+UzwMqdRPVRBrBqCRfskzLYVXQUw@mail.gmail.com>
+Message-ID: <87cyn4i8qb.fsf@jacob.g10code.de>
+
+On Mon, 22 Jul 2024 10:45, Felix E. Klee said:
+> Is there anything I can try, or is the pinpad on the ACS APG8201-B2
+> simply not supported?
+
+I don't known.  If you are using the internal CCID driver, you may want
+to add
+
+debug reader
+debug-ccid-driver
+log-file foo/bar/baz
+
+to scdaemon.conf and check whether it gives some insights.
+
+
+Shalom-Salam,
+
+   Werner
+
+
+-- 
+The pioneers of a warless world are the youth that
+refuse military service.             - A. Einstein
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: openpgp-digital-signature.asc
+Type: application/pgp-signature
+Size: 247 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240723/441ccace/attachment.sig>
+
+From Eva.Bolten at gnupg.com  Mon Jul 22 09:37:26 2024
+From: Eva.Bolten at gnupg.com (Eva Bolten)
+Date: Mon, 22 Jul 2024 09:37:26 +0200
+Subject: baffled at "Chapter 1. Getting Started" due to gpg: agent_genkey
+ failed: No pinentry
+In-Reply-To: <5847eea7-1909-4fa3-8de6-42fef09754e4@genunix.com>
+References: <c3a6d7d7-19a1-408b-b974-e8ef1e59e066@genunix.com>
+ <Zpti_FHVFIIvowwa@argenau.bebt.de>
+ <5847eea7-1909-4fa3-8de6-42fef09754e4@genunix.com>
+Message-ID: <2791649.kBTqo6SECv@jackson>
+
+Hi Dennis,
+
+would you mind telling us which gpg version you are using and what your 
+distribution is?  
+
+> oberon$ gpgconf --list-config
+> gpgconf: can't open global config file 
+> '/usr/local/etc/gnupg/gpgconf.conf': No such file or directory
+> oberon$
+
+man gpgconf
+[...]
+/etc/gnupg/gpgconf.conf
+     If this file exists, it is processed as a global configuration file.
+     This is  a  legacy  mechanism  which  should  not  be  used together with
+     the  modern  global  per  component configuration files.  A commented
+     example can be found in the ?examples? directory of the distribution.
+
+> So I guess I need to read a pile of manpages and figure out how
+> to create a config file that tells gpg where things are. This is
+> bizarre behavior on a UNIX/Linux system where I guess the PATH
+> just does not matter much. Then again .... I don't know.
+
+As I had an issue with pinentry after a recent pinentry update on Arch Linux 
+(the bash script "pinentry" Arch provided decided that I want pinentry-
+curses?) and your issues started with a pinentry problem, this it how I solved 
+mine:
+
+You can tell gpg explicitly which pinentry programm to use.
+Put the following line in yout gpg-agent.conf:
+pinentry-program /PATH/TO/YOUR/PINENTRY
+
+Create the file in you GNUPGHOME if it does not exist.
+GNUPGHOME is usually ~/.gnupg
+
+Regards
+
+Eva
+
+
+-- 
+g10 Code GmbH         GnuPG.com           AmtsGer. Wuppertal HRB 14459
+Bergstr. 3a                               Gesch?ftsf?hrung Werner Koch
+D-40699 Erkrath       https://gnupg.com      USt-Id DE215605608
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 228 bytes
+Desc: This is a digitally signed message part.
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240722/01c71a15/attachment.sig>
+
+From simon at josefsson.org  Wed Jul 24 11:48:54 2024
+From: simon at josefsson.org (Simon Josefsson)
+Date: Wed, 24 Jul 2024 11:48:54 +0200
+Subject: sopv-gpgpv: an implementation of the verification-only subset
+ of the Stateless OpenPGP CLI using gpgv as a backend
+In-Reply-To: <87h6cgi8ti.fsf@jacob.g10code.de> (Werner Koch via Gnupg-users's
+ message of "Tue, 23 Jul 2024 14:36:41 +0200")
+References: <878qxug03j.fsf@fifthhorseman.net>
+ <87h6cgi8ti.fsf@jacob.g10code.de>
+Message-ID: <875xsv2k8p.fsf@kaka.sjd.se>
+
+Werner Koch via Gnupg-users <gnupg-users at gnupg.org> writes:
+
+> Hi!
+>
+> while talking about gpgv, let me remind you about the new
+> --assert-signer option which can be used as a replacement for gpgv.
+>
+>   --assert-signer fpr_or_file
+>   
+>      This option checks whether at least one valid signature on file has
+>      been made with the specified key.  The key is either specified as a
+>      fingerprint or a file listing fingerprints.  The fingerprint must be
+>      given or listed in compact format (no colons or spaces in between).
+>      This option can be given multiple times and each fingerprint is
+>      checked against the signing key as well as the corresponding
+>      primary key.  If fpr_or_file specifies a file, empty lines are
+>      ignored as well as all lines starting with a hash sign.  With this
+>      option gpg is guaranteed to return with an exit code of 0 if and
+>      only if a signature has been encountered, is valid, and the key
+>      matches one of the fingerprints given by this option.
+>
+> This option is available since 2.4.1.
+
+I've been wanting a parameter like that!  Does it check key expiration
+times by default?  Is it possible to disable/enable that behaviour?
+
+Sometimes (and a safe default behaviour) you want to reject signatures
+signed by an expired key, although sometimes you want to permit that to
+confirm that some old signature was created by some expired key.
+
+/Simon
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 255 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240724/d7744a24/attachment.sig>
+
+From felix.klee at inka.de  Wed Jul 24 13:32:21 2024
+From: felix.klee at inka.de (Felix E. Klee)
+Date: Wed, 24 Jul 2024 19:32:21 +0800
+Subject: ACS APG8201-B2
+In-Reply-To: <87cyn4i8qb.fsf@jacob.g10code.de>
+References: <CA+m_8J0FS=pgZqBwN27eOKDp6TNJ297r+xe-pT3Z=Bp7VuoO3w@mail.gmail.com>
+ <CA+m_8J2JS9VfjH6EsHQEr1+UzwMqdRPVRBrBqCRfskzLYVXQUw@mail.gmail.com>
+ <87cyn4i8qb.fsf@jacob.g10code.de>
+Message-ID: <CA+m_8J20WnRw0xAij76FLsRv29QS5g-vz8KHHia3qbk=p7OQvg@mail.gmail.com>
+
+Thank you, Werner!
+
+I attached the log. When grepping for ?pin?, I find (prefix stripped):
+
+DBG: ccid-driver:   bPINSupport             3  verification modification
+PIN-Block-2 ....: no
+DBG: asking for PIN '||Please unlock the card%0A%0A\x1eNumber\x1f:
+0005 000064D5%0AHolder\x1f: Felix Klee'
+PIN callback returned error: IPC call has been cancelled
+
+In the reference manual I find a section titled ?SECURE PIN VERIFY?:
+
+https://www.acs.com.hk/download-manual/10212/REF-APG8201-B2-1.00.pdf
+
+It looks like it should support entry of the PIN via the pinpad.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: scd.log
+Type: application/octet-stream
+Size: 45925 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240724/9ff5a459/attachment-0001.obj>
+
+From wk at gnupg.org  Fri Jul 26 13:00:46 2024
+From: wk at gnupg.org (Werner Koch)
+Date: Fri, 26 Jul 2024 13:00:46 +0200
+Subject: sopv-gpgpv: an implementation of the verification-only subset
+ of the Stateless OpenPGP CLI using gpgv as a backend
+In-Reply-To: <875xsv2k8p.fsf@kaka.sjd.se> (Simon Josefsson via Gnupg-users's
+ message of "Wed, 24 Jul 2024 11:48:54 +0200")
+References: <878qxug03j.fsf@fifthhorseman.net>
+ <87h6cgi8ti.fsf@jacob.g10code.de> <875xsv2k8p.fsf@kaka.sjd.se>
+Message-ID: <8734nwifj5.fsf@jacob.g10code.de>
+
+Hi!
+
+On Wed, 24 Jul 2024 11:48, Simon Josefsson said:
+
+> I've been wanting a parameter like that!  Does it check key expiration
+> times by default?  Is it possible to disable/enable that behaviour?
+
+Yes.  In theory --debug-ignore-expiration should do the trick but given
+that this is a debug option; you better don't rely on this.  Maybe we
+can do a regular option with the same effect for verification only.
+
+
+Salam-Shalom,
+
+   Werner
+
+
+-- 
+The pioneers of a warless world are the youth that
+refuse military service.             - A. Einstein
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: openpgp-digital-signature.asc
+Type: application/pgp-signature
+Size: 247 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240726/c014a54d/attachment.sig>
+
+From tmz at pobox.com  Fri Jul 26 15:54:32 2024
+From: tmz at pobox.com (Todd Zullinger)
+Date: Fri, 26 Jul 2024 09:54:32 -0400
+Subject: sopv-gpgpv: an implementation of the verification-only subset of
+ the Stateless OpenPGP CLI using gpgv as a backend
+In-Reply-To: <87h6cgi8ti.fsf@jacob.g10code.de>
+References: <878qxug03j.fsf@fifthhorseman.net>
+ <87h6cgi8ti.fsf@jacob.g10code.de>
+Message-ID: <ZqOqmBzGWAkJu4kQ@teonanacatl.net>
+
+Hello,
+
+Werner Koch via Gnupg-users wrote:
+> while talking about gpgv, let me remind you about the new
+> --assert-signer option which can be used as a replacement for gpgv.
+
+In a similar way, is there anyone able and interested in
+helping to move https://dev.gnupg.org/T2290 (Allow gpgv2 to
+use armored GPG keys as keyring file with trusted keys)
+forward?
+
+A reasonably common use case for gpgv is to verify
+signatures on release artifacts by distribution packaging
+tools.  Being able to use the upstream provided key
+material, which is typically armored, would make things a
+bit simpler and easier to verify for people interested in
+ensuring those packages are using the proper key material
+and are not introducing any issues.
+
+In the Fedora/Red Hat world, a gpgverify script has been
+added which must call `gpg --dearmor` to strip the armor
+from an upstream key, requiring tmp files and such.  I
+imagine this similarly affects Debian-based packages as
+well.
+
+It would be cleaner to just call gpgv (or some form of gpg
+with --assert-signer, perhaps).
+
+-- 
+Todd
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 228 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240726/be79ce79/attachment.sig>
+
+From dkg at fifthhorseman.net  Mon Jul 29 18:01:58 2024
+From: dkg at fifthhorseman.net (Daniel Kahn Gillmor)
+Date: Mon, 29 Jul 2024 12:01:58 -0400
+Subject: sopv-gpgpv: an implementation of the verification-only subset
+ of the Stateless OpenPGP CLI using gpgv as a backend
+In-Reply-To: <ZqOqmBzGWAkJu4kQ@teonanacatl.net>
+References: <878qxug03j.fsf@fifthhorseman.net>
+ <87h6cgi8ti.fsf@jacob.g10code.de> <ZqOqmBzGWAkJu4kQ@teonanacatl.net>
+Message-ID: <87r0bcw5jd.fsf@fifthhorseman.net>
+
+Hi Todd--
+
+On Fri 2024-07-26 09:54:32 -0400, Todd Zullinger via Gnupg-users wrote:
+> A reasonably common use case for gpgv is to verify
+> signatures on release artifacts by distribution packaging
+> tools.  Being able to use the upstream provided key
+> material, which is typically armored, would make things a
+> bit simpler and easier to verify for people interested in
+> ensuring those packages are using the proper key material
+> and are not introducing any issues.
+
+I recommend using any sopv implementation for that use case, since sopv
+is specified to explicitly accept both armored and unarmored
+certificates as verification targets.
+
+             --dkg
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 324 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240729/4d274e7f/attachment.sig>
+
+From tmz at pobox.com  Mon Jul 29 21:47:09 2024
+From: tmz at pobox.com (Todd Zullinger)
+Date: Mon, 29 Jul 2024 15:47:09 -0400
+Subject: sopv-gpgpv: an implementation of the verification-only subset of
+ the Stateless OpenPGP CLI using gpgv as a backend
+In-Reply-To: <87r0bcw5jd.fsf@fifthhorseman.net>
+References: <878qxug03j.fsf@fifthhorseman.net>
+ <87h6cgi8ti.fsf@jacob.g10code.de>
+ <ZqOqmBzGWAkJu4kQ@teonanacatl.net>
+ <87r0bcw5jd.fsf@fifthhorseman.net>
+Message-ID: <ZqfxvewzQddcwP7W@teonanacatl.net>
+
+Hi,
+
+Daniel Kahn Gillmor via Gnupg-users wrote:
+> Hi Todd--
+> 
+> On Fri 2024-07-26 09:54:32 -0400, Todd Zullinger via Gnupg-users wrote:
+>> A reasonably common use case for gpgv is to verify
+>> signatures on release artifacts by distribution packaging
+>> tools.  Being able to use the upstream provided key
+>> material, which is typically armored, would make things a
+>> bit simpler and easier to verify for people interested in
+>> ensuring those packages are using the proper key material
+>> and are not introducing any issues.
+> 
+> I recommend using any sopv implementation for that use case, since sopv
+> is specified to explicitly accept both armored and unarmored
+> certificates as verification targets.
+
+That's a fine goal for down the road, but it's not going to
+be a solid option until those implementations are all
+included in the distributions.
+
+Particularly, using sopv-gpgv would introduce more
+dependencies to the buildroot (the python stack,
+specifically) which is unlikely to be something folks like
+Fedora want, after spending time to minimize the default
+buildroot.  (I don't care too much about Fedora anymore, as
+I'm migrating away from anything Red Hat based, but it's
+still what I'm most familiar with.)
+
+Fedora does have the Sequoia SOP command available, but it
+doesn't work out of the box (nor does it provide an option
+to be more verbose, AFAICT).
+
+Not that I want to turn this into a support chat for an
+unrelated command, but here's what the experience looks like
+in a minimal Fedora 40 container when attempting to verify
+the git source:
+
+    [root at 6e3fc2ac22a3 tmp]# /usr/lib/rpm/redhat/gpgverify \
+        --keyring=gpgkey-junio.asc --signature=git-2.46.0.tar.sign \
+        --data=git-2.46.0.tar
+    gpgv: Signature made Mon Jul 29 14:27:21 2024 UTC
+    gpgv:                using RSA key E1F036B1FEE7221FC778ECEFB0B5E88696AFE6CB
+    gpgv: Good signature from "Junio C Hamano <gitster at pobox.com>"
+    gpgv:                 aka "Junio C Hamano <junio at pobox.com>"
+    gpgv:                 aka "Junio C Hamano <jch at google.com>"
+
+    [root at 6e3fc2ac22a3 tmp]# /tmp/sopv-gpgv verify git-2.46.0.tar.sign \
+        gpgkey-junio.asc <git-2.46.0.tar
+    2024-07-29T14:07:21Z E1F036B1FEE7221FC778ECEFB0B5E88696AFE6CB 96E07AF25771955980DAD10020D04E5A713660A7 mode:binary
+
+    [root at 6e3fc2ac22a3 tmp]# sqop verify git-2.46.0.tar.sign \
+        gpgkey-junio.asc <git-2.46.0.tar
+	       No acceptable signatures found
+
+The version installed was 0.34.0, while there is a newer tag
+upstream 0.35.0.  I tested that as well, with the same
+result.
+
+Using /usr/lib/rpm/redhat/gpgverify -- which is a small
+shell script wrapper for gpgv -- avoids new dependencies and
+produces quite readable output which is handy in build logs.
+
+Using an SOP command would still require some wrapper to
+provide useful error output.  That's all fixable, but it's
+going to take some time before that's in place and
+acceptable by many distributions.
+
+Personally, I'd prefer to continue using gpgv for now.  But
+I'll keep any eye on the SOP clients.
+
+Thanks,
+
+-- 
+Todd
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 228 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240729/9a0aa2fb/attachment.sig>
+
+From felix.klee at inka.de  Tue Jul 30 02:58:43 2024
+From: felix.klee at inka.de (Felix E. Klee)
+Date: Tue, 30 Jul 2024 08:58:43 +0800
+Subject: ACS APG8201-B2
+In-Reply-To: <CA+m_8J20WnRw0xAij76FLsRv29QS5g-vz8KHHia3qbk=p7OQvg@mail.gmail.com>
+References: <CA+m_8J0FS=pgZqBwN27eOKDp6TNJ297r+xe-pT3Z=Bp7VuoO3w@mail.gmail.com>
+ <CA+m_8J2JS9VfjH6EsHQEr1+UzwMqdRPVRBrBqCRfskzLYVXQUw@mail.gmail.com>
+ <87cyn4i8qb.fsf@jacob.g10code.de>
+ <CA+m_8J20WnRw0xAij76FLsRv29QS5g-vz8KHHia3qbk=p7OQvg@mail.gmail.com>
+Message-ID: <CA+m_8J270BV+1CX1QgSTra_dGVhG3d0yD2wDzs=4zs1=Qpfs7w@mail.gmail.com>
+
+No idea what to do. Guess I?ll fix my modded SPR332 and continue using
+that.
+
+
+From gniibe at fsij.org  Tue Jul 30 06:51:29 2024
+From: gniibe at fsij.org (Niibe Yutaka)
+Date: Tue, 30 Jul 2024 13:51:29 +0900
+Subject: ACS APG8201-B2
+In-Reply-To: <CA+m_8J270BV+1CX1QgSTra_dGVhG3d0yD2wDzs=4zs1=Qpfs7w@mail.gmail.com>
+References: <CA+m_8J0FS=pgZqBwN27eOKDp6TNJ297r+xe-pT3Z=Bp7VuoO3w@mail.gmail.com>
+ <CA+m_8J2JS9VfjH6EsHQEr1+UzwMqdRPVRBrBqCRfskzLYVXQUw@mail.gmail.com>
+ <87cyn4i8qb.fsf@jacob.g10code.de>
+ <CA+m_8J20WnRw0xAij76FLsRv29QS5g-vz8KHHia3qbk=p7OQvg@mail.gmail.com>
+ <CA+m_8J270BV+1CX1QgSTra_dGVhG3d0yD2wDzs=4zs1=Qpfs7w@mail.gmail.com>
+Message-ID: <8734nrtrce.fsf@jumper.gniibe.org>
+
+Hello,
+
+"Felix E. Klee" <felix.klee at inka.de> wrote:
+> No idea what to do.  Guess I?ll fix my modded SPR332 and continue using
+> that.
+
+Basically, it's case-by-case thingy when we add new (proprietary)
+hardware support around smartcard + card reader.  While we have
+standardized CCID protocol, actually, it depends on each card reader
+plus smartcard combination.
+
+I don't know if it still work for newer Python, but I used to use
+this test program for pinpad input:
+
+https://salsa.debian.org/gnuk-team/gnuk/gnuk/-/blob/master/tool/pinpadtest.py?ref_type=heads
+
+This might help when you try.
+-- 
+
+
+From dkg at fifthhorseman.net  Tue Jul 30 11:35:22 2024
+From: dkg at fifthhorseman.net (Daniel Kahn Gillmor)
+Date: Tue, 30 Jul 2024 05:35:22 -0400
+Subject: sopv-gpgpv: an implementation of the verification-only subset
+ of the Stateless OpenPGP CLI using gpgv as a backend
+In-Reply-To: <ZqfxvewzQddcwP7W@teonanacatl.net>
+References: <878qxug03j.fsf@fifthhorseman.net>
+ <87h6cgi8ti.fsf@jacob.g10code.de> <ZqOqmBzGWAkJu4kQ@teonanacatl.net>
+ <87r0bcw5jd.fsf@fifthhorseman.net> <ZqfxvewzQddcwP7W@teonanacatl.net>
+Message-ID: <87o76fw7c5.fsf@fifthhorseman.net>
+
+Hi Todd--
+
+On Mon 2024-07-29 15:47:09 -0400, Todd Zullinger via Gnupg-users wrote:
+> Particularly, using sopv-gpgv would introduce more
+> dependencies to the buildroot (the python stack,
+> specifically) which is unlikely to be something folks like
+> Fedora want, after spending time to minimize the default
+> buildroot.  (I don't care too much about Fedora anymore, as
+> I'm migrating away from anything Red Hat based, but it's
+> still what I'm most familiar with.)
+
+If anyone wants to propose a version of sopv-gpgv that has no additional
+external dependencies, i'd be happy to review it and merge it if it's
+good :) i'm not sold on sopv-gpgv needing to be python, i just chose
+that languagte as a reasonable option to do rapid development, sensible
+argument handling, and not-too-dangerous parsing of gpgv's status file,
+which seems obligatory to get the answer that most folks want out of .
+
+> Fedora does have the Sequoia SOP command available, but it
+> doesn't work out of the box (nor does it provide an option
+> to be more verbose, AFAICT).
+
+The fact that sqop or sqopv can't verify the material you're looking at
+suggests a problem with the data presented to it.
+
+I found the files you're testing with at:
+
+https://www.kernel.org/pub/software/scm/git/git-2.46.0.tar.sign
+https://www.kernel.org/pub/software/scm/git/git-2.46.0.tar.xz
+
+and i used my copy of Junio's OpenPGP certificate, which i keep up to
+date from the various keyserver networks.   I'm not sure where you got
+it from, but i've attached it to this e-mail.
+
+i first decompresed the .xz to a raw tarball, then ran the same tests as
+you did, and i got the same results.
+
+>     [root at 6e3fc2ac22a3 tmp]# /usr/lib/rpm/redhat/gpgverify \
+>         --keyring=gpgkey-junio.asc --signature=git-2.46.0.tar.sign \
+>         --data=git-2.46.0.tar
+>     gpgv: Signature made Mon Jul 29 14:27:21 2024 UTC
+>     gpgv:                using RSA key E1F036B1FEE7221FC778ECEFB0B5E88696AFE6CB
+>     gpgv: Good signature from "Junio C Hamano <gitster at pobox.com>"
+>     gpgv:                 aka "Junio C Hamano <junio at pobox.com>"
+>     gpgv:                 aka "Junio C Hamano <jch at google.com>"
+>
+>     [root at 6e3fc2ac22a3 tmp]# /tmp/sopv-gpgv verify git-2.46.0.tar.sign \
+>         gpgkey-junio.asc <git-2.46.0.tar
+>     2024-07-29T14:07:21Z E1F036B1FEE7221FC778ECEFB0B5E88696AFE6CB 96E07AF25771955980DAD10020D04E5A713660A7 mode:binary
+>
+>     [root at 6e3fc2ac22a3 tmp]# sqop verify git-2.46.0.tar.sign \
+>         gpgkey-junio.asc <git-2.46.0.tar
+> 	       No acceptable signatures found
+
+A bit of digging further suggests that sqop is rejecting Junio's OpenPGP
+certificate because it does not have a valid direct key self-signature
+or user ID self-certification at the time that the signature was made.
+
+In particular, the User ID self-certifications that are present in the
+certificate depend on SHA-1, which has been explicitly deprecated and
+marked for legacy use only as far back in 2011, when Junio's certificate
+claims to have been created:
+
+   https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-131a.pdf
+  
+(i'm not saying you have to agree with NIST's specifications; just
+observing that Junio's certificate was weaker than it should have been
+when it was created, and *really* should have been updated by now)
+
+gpgv didn't catch this, even with a warning. ?
+
+> Using /usr/lib/rpm/redhat/gpgverify -- which is a small
+> shell script wrapper for gpgv -- avoids new dependencies and
+> produces quite readable output which is handy in build logs.
+
+is this the source for gpgverify that you're using?
+
+https://src.fedoraproject.org/rpms/redhat-rpm-config/blob/main/f/gpgverify
+
+This depends explicitly on the return code for gpgv, which is known to
+be brittle.  (it also depends on gpg itself, not just on gpgv, as you
+noted earlier, for the dearmoring)
+
+For example, if the detached signature contains multiple signatures, and
+gpgv can't verify one of them, it will return a non-zero error code,
+even if it *can* verify the other signature.  This means every tool that
+depends on gpgverify is going to make it difficult to migrate the
+ecosystem to new cryptographic algorithms.
+
+The usual approach for that would be to sign the file with both the old
+and new algorithms, and put them both in the detached signature file.
+That way, existing implementations can continue to verify the old
+algorithm, and newer implementations can verify the new one.
+
+However, that won't work for clients that rely on gpgverify, because
+they'll return a non-zero status because they can't verify the new
+signature, even if the legacy algorithm (which it does know about)
+validates just fine. ?
+
+> Using an SOP command would still require some wrapper to
+> provide useful error output.  That's all fixable, but it's
+> going to take some time before that's in place and
+> acceptable by many distributions.
+
+What error output do you think would be useful?  The most important goal
+is to only accept things that should be acceptable and to only reject
+things would not be unacceptable.  If there's a rejection, there could
+be dozens of possible reasons, each represented by a single
+counterfactual.  How many of those counterfactuals should be emitted?
+
+Regards,
+
+        --dkg
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: junio.pgp
+Type: application/pgp-keys
+Size: 9297 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240730/ede7fe39/attachment-0001.key>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 324 bytes
+Desc: not available
+URL: <https://lists.gnupg.org/pipermail/gnupg-users/attachments/20240730/ede7fe39/attachment-0001.sig>
+
+From gnupg at jrcii.com  Wed Jul 31 17:12:21 2024
+From: gnupg at jrcii.com (John Cornell)
+Date: Wed, 31 Jul 2024 15:12:21 +0000
+Subject: Account registration
+Message-ID: <d755d8ff-6770-4011-a1f9-77976a612363@app.fastmail.com>
+
+Hi,
+
+I wanted to register an account at dev.gnupg.org but was unable to. Apparently registration is disabled, a message (https://dev.gnupg.org/maniphest/task/edit/form/2/) directed me to post to this list. If I can please have an account. The info is:
+
+Handle: jrcii
+Show name: John Cornell
+Email: gnupg at jrcii.com
+
+Thank you.
+
+John Cornell
+
+
